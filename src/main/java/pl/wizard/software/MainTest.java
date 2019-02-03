@@ -18,7 +18,7 @@ public class MainTest {
         System.out.println("5. 18.90 Ostry");
 
         int opt;
-
+        double price = 0.0;
 
         String orderedBurger = null;
         while (orderedBurger == null) {
@@ -26,18 +26,23 @@ public class MainTest {
             switch (opt) {
                 case 1:
                     orderedBurger = "klasyczny";
+                    price = 16.90;
                     break;
                 case 2:
                     orderedBurger = "kowbojski";
+                    price = 21.90;
                     break;
                 case 3:
                     orderedBurger = "orientalny";
+                    price = 20.90;
                     break;
                 case 4:
                     orderedBurger = "serowy";
+                    price = 19.90;
                     break;
                 case 5:
                     orderedBurger = "ostry";
+                    price = 18.90;
                     break;
                 default:
                     System.out.println("Wybrano niepoprawną opcje");
@@ -62,18 +67,23 @@ public class MainTest {
                     break;
                 case 2:
                     additionList.add("pomidor");
+                    price += 1.00;
                     break;
                 case 3:
                     additionList.add("rukola");
+                    price += 0.40;
                     break;
                 case 4:
                     additionList.add("jajko");
+                    price += 1.00;
                     break;
                 case 5:
                     additionList.add("ser");
+                    price += 0.80;
                     break;
                 case 6:
                     additionList.add("bekon");
+                    price += 1.50;
                     break;
                 default:
                     System.out.println("Wybrano niepoprawną opcje");
@@ -90,6 +100,7 @@ public class MainTest {
                 sb.append(a);
                 sb.append(", ");
             });
+            sb.append(" do zapłaty: " + price);
             System.out.println(sb.toString());
         }
     }
