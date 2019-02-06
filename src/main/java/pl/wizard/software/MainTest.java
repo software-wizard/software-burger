@@ -1,8 +1,6 @@
 package pl.wizard.software;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static pl.wizard.software.Product.*;
 
@@ -42,54 +40,35 @@ public class MainTest {
         spiceBurger.addProduct(TOMATO);
         spiceBurger.addProduct(CHEESE);
 
+        List<Burger> menu = new ArrayList<>();
+        menu.add(classicBurger);
+        menu.add(cowboyBurger);
+        menu.add(orientalBurger);
+        menu.add(cheeseBurger);
+        menu.add(spiceBurger);
+
         System.out.println("BURGER MENU");
         System.out.println("WYBIERZ BURGERA:");
-        System.out.println();
-        System.out.println("1." +  classicBurger.getPrice() + " " + classicBurger.getName() + System.getProperty("line.separator") + classicBurger.getProductsAsString() );
-        System.out.println();
-        System.out.println("2. " +  cowboyBurger.getPrice() + " " + cowboyBurger.getName() + System.getProperty("line.separator") + cowboyBurger.getProductsAsString() );
-        System.out.println();
-        System.out.println("3. " +  orientalBurger.getPrice() + " " + orientalBurger.getName() + System.getProperty("line.separator") + orientalBurger.getProductsAsString() );
-        System.out.println();
-        System.out.println("4. " +  cheeseBurger.getPrice() + " " + cheeseBurger.getName() + System.getProperty("line.separator") + cheeseBurger.getProductsAsString() );
-        System.out.println();
-        System.out.println("5. " +  spiceBurger.getPrice() + " " + spiceBurger.getName() + System.getProperty("line.separator") + spiceBurger.getProductsAsString() );
+        for (int i = 0; i < menu.size(); i++) {
+            System.out.println();
+            System.out.println(i + 1 + ". " + menu.get(i).getPrice() + " " + menu.get(i).getName() + System.getProperty("line.separator") + menu.get(i).getProductsAsString());
+        }
 
         int opt;
-        double price = 0.0;
 
-        String orderedBurger = null;
+        Burger orderedBurger = null;
         while (orderedBurger == null) {
             opt = sc.nextInt();
-            switch (opt) {
-                case 1:
-                    orderedBurger = classicBurger.getName() + System.getProperty("line.separator") + classicBurger.getProductsAsString();
-                    price = classicBurger.getPrice();
-                    break;
-                case 2:
-                    orderedBurger = cowboyBurger.getPrice() + " " + cowboyBurger.getName() + System.getProperty("line.separator") + cowboyBurger.getProductsAsString();
-                    price = cowboyBurger.getPrice();
-                    break;
-                case 3:
-                    orderedBurger = orientalBurger.getPrice() + " " + orientalBurger.getName() + System.getProperty("line.separator") + orientalBurger.getProductsAsString();
-                    price = orientalBurger.getPrice();
-                    break;
-                case 4:
-                    orderedBurger = cheeseBurger.getPrice() + " " + cheeseBurger.getName() + System.getProperty("line.separator") + cheeseBurger.getProductsAsString();
-                    price = cheeseBurger.getPrice();
-                    break;
-                case 5:
-                    orderedBurger = spiceBurger.getPrice() + " " + spiceBurger.getName() + System.getProperty("line.separator") + spiceBurger.getProductsAsString();
-                    price = spiceBurger.getPrice();
-                    break;
-                default:
-                    System.out.println("Wybrano niepoprawną opcje");
-                    break;
+            if (opt < 1 || opt > 5) {
+                System.out.println("Wybrano niepoprawną opcje");
+            } else {
+                orderedBurger = menu.get(opt - 1);
             }
         }
 
         List<String> additionList = new ArrayList<>();
         int opt2;
+        double additionsPrice = 0.0;
         do {
             System.out.println("Czy życzysz sobie coś do niego dołożyć? Jakiś bekon, pomidor czy serek?");
             System.out.println("1. Nie jest spoko, zamawiam");
@@ -105,23 +84,23 @@ public class MainTest {
                     break;
                 case 2:
                     additionList.add(TOMATO);
-                    price += 1.00;
+                    additionsPrice += 1.00;
                     break;
                 case 3:
                     additionList.add(RUCOLA);
-                    price += 0.40;
+                    additionsPrice += 0.40;
                     break;
                 case 4:
                     additionList.add(EGG);
-                    price += 1.00;
+                    additionsPrice += 1.00;
                     break;
                 case 5:
                     additionList.add(CHEESE);
-                    price += 0.80;
+                    additionsPrice += 0.80;
                     break;
                 case 6:
                     additionList.add(BECON);
-                    price += 1.50;
+                    additionsPrice += 1.50;
                     break;
                 default:
                     System.out.println("Wybrano niepoprawną opcje");
@@ -138,7 +117,7 @@ public class MainTest {
                 sb.append(a);
                 sb.append(", ");
             });
-            sb.append(" do zapłaty: " + price);
+            sb.append(" do zapłaty: " + orderedBurger.getPrice() + additionsPrice);
             System.out.println(sb.toString());
         }
     }
