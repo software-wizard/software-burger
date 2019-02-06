@@ -11,11 +11,11 @@ public class MainTest {
 
         System.out.println("BURGER MENU");
         System.out.println("WYBIERZ BURGERA:");
-        System.out.println("1. 16.90 Klasyczny");
-        System.out.println("2. 21.90 Kowbojski");
-        System.out.println("3. 20.90 Orientalny");
-        System.out.println("4. 19.90 Serowy");
-        System.out.println("5. 18.90 Ostry");
+        System.out.println("1. 16.90 Klasyczny" + System.getProperty("line.separator") + "mięsko, sałata, pomidor, sos");
+        System.out.println("2. 21.90 Kowbojski" + System.getProperty("line.separator") + "mięsko, cebula, krążki cebulowe, pomidor, sos, ogórek");
+        System.out.println("3. 20.90 Orientalny" + System.getProperty("line.separator") + "mięsko, bambus, ananas, sos");
+        System.out.println("4. 19.90 Serowy" + System.getProperty("line.separator") + "mięsko, sałata, pomidor, sos, ser");
+        System.out.println("5. 18.90 Ostry" + "ostry" + System.getProperty("line.separator") + "mięsko, jalapeño, pomidor, sos");
 
         int opt;
         double price = 0.0;
@@ -25,23 +25,23 @@ public class MainTest {
             opt = sc.nextInt();
             switch (opt) {
                 case 1:
-                    orderedBurger = "klasyczny";
+                    orderedBurger = "klasyczny" + System.getProperty("line.separator") + "mięsko, sałata, pomidor, sos";
                     price = 16.90;
                     break;
                 case 2:
-                    orderedBurger = "kowbojski";
+                    orderedBurger = "kowbojski" + System.getProperty("line.separator") + "mięsko, cebula, krążki cebulowe, pomidor, sos, ogórek";
                     price = 21.90;
                     break;
                 case 3:
-                    orderedBurger = "orientalny";
+                    orderedBurger = "orientalny" + System.getProperty("line.separator") + "mięsko, bambus, ananas, sos";
                     price = 20.90;
                     break;
                 case 4:
-                    orderedBurger = "serowy";
+                    orderedBurger = "serowy" + System.getProperty("line.separator") + "mięsko, sałata, pomidor, sos, ser";
                     price = 19.90;
                     break;
                 case 5:
-                    orderedBurger = "ostry";
+                    orderedBurger = "ostry" + System.getProperty("line.separator") + "mięsko, jalapeño, pomidor, sos";
                     price = 18.90;
                     break;
                 default:
@@ -95,7 +95,7 @@ public class MainTest {
         if (additionList.isEmpty()) {
             System.out.println("Zamówiłeś burger " + orderedBurger);
         } else {
-            StringBuilder sb = new StringBuilder("Zamówiłeś burger " + orderedBurger + " wybrane dodatki to: ");
+            StringBuilder sb = new StringBuilder("Zamówiłeś burger " + orderedBurger + System.getProperty("line.separator") + " wybrane dodatki to: ");
             additionList.forEach(a -> {
                 sb.append(a);
                 sb.append(", ");
