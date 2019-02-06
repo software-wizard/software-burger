@@ -51,7 +51,7 @@ public class MainTest {
         System.out.println("WYBIERZ BURGERA:");
         for (int i = 0; i < menu.size(); i++) {
             System.out.println();
-            System.out.println(i + 1 + ". " + menu.get(i).getPrice() + " " + menu.get(i).getName() + System.getProperty("line.separator") + menu.get(i).getProductsAsString());
+            System.out.println(i + 1 + ". " + menu.get(i).getPrice() + " " + menu.get(i));
         }
 
         int opt;
@@ -117,7 +117,7 @@ public class MainTest {
                 sb.append(a);
                 sb.append(", ");
             });
-            sb.append(" do zapłaty: " + orderedBurger.getPrice() + additionsPrice);
+            sb.append(" do zapłaty: " + (orderedBurger.getPrice() + additionsPrice));
             System.out.println(sb.toString());
         }
     }

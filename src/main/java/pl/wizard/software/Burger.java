@@ -35,4 +35,9 @@ public class Burger {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return name + System.getProperty("line.separator") + getProductsAsString();
+    }
 }
