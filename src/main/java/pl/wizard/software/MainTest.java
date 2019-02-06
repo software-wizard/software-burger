@@ -11,18 +11,49 @@ public class MainTest {
     public static void main(String[] aArg) {
         Scanner sc = new Scanner(System.in);
 
+        Burger classicBurger = new Burger("Klasyczny", 16.90);
+        classicBurger.addProduct(MEAT);
+        classicBurger.addProduct(SALAT);
+        classicBurger.addProduct(TOMATO);
+        classicBurger.addProduct(SAUCE);
+
+        Burger cowboyBurger = new Burger("Kowbojski", 21.90);
+        cowboyBurger.addProduct(MEAT);
+        cowboyBurger.addProduct(ONION);
+        cowboyBurger.addProduct(TOMATO);
+        cowboyBurger.addProduct(SAUCE);
+        cowboyBurger.addProduct(CUCUMBER);
+
+        Burger orientalBurger = new Burger("Orientalny", 20.90);
+        orientalBurger.addProduct(MEAT);
+        orientalBurger.addProduct(BAMBOO);
+        orientalBurger.addProduct(PINEAPPLE);
+        orientalBurger.addProduct(SAUCE);
+
+        Burger cheeseBurger = new Burger("Serowy", 19.90);
+        cheeseBurger.addProduct(MEAT);
+        cheeseBurger.addProduct(SALAT);
+        cheeseBurger.addProduct(TOMATO);
+        cheeseBurger.addProduct(CHEESE);
+
+        Burger spiceBurger = new Burger("ostry", 19.90);
+        spiceBurger.addProduct(MEAT);
+        spiceBurger.addProduct(JALAPENO);
+        spiceBurger.addProduct(TOMATO);
+        spiceBurger.addProduct(CHEESE);
+
         System.out.println("BURGER MENU");
         System.out.println("WYBIERZ BURGERA:");
         System.out.println();
-        System.out.println("1. 16.90 Klasyczny" + System.getProperty("line.separator") + Product.MEAT + " " + SALAT + " " + TOMATO + " " + SAUCE);
+        System.out.println("1." +  classicBurger.getPrice() + " " + classicBurger.getName() + System.getProperty("line.separator") + classicBurger.getProductsAsString() );
         System.out.println();
-        System.out.println("2. 21.90 Kowbojski" + System.getProperty("line.separator") + MEAT + " " + ONION + " " + TOMATO + " " + SAUCE + " " + CUCUMBER);
+        System.out.println("2. " +  cowboyBurger.getPrice() + " " + cowboyBurger.getName() + System.getProperty("line.separator") + cowboyBurger.getProductsAsString() );
         System.out.println();
-        System.out.println("3. 20.90 Orientalny" + System.getProperty("line.separator") + MEAT + " " + BAMBOO + " " + PINEAPPLE + " " + SAUCE);
+        System.out.println("3. " +  orientalBurger.getPrice() + " " + orientalBurger.getName() + System.getProperty("line.separator") + orientalBurger.getProductsAsString() );
         System.out.println();
-        System.out.println("4. 19.90 Serowy" + System.getProperty("line.separator") + MEAT + " " + SALAT + " " + TOMATO + " " + CHEESE);
+        System.out.println("4. " +  cheeseBurger.getPrice() + " " + cheeseBurger.getName() + System.getProperty("line.separator") + cheeseBurger.getProductsAsString() );
         System.out.println();
-        System.out.println("5. 18.90 Ostry" + "ostry" + System.getProperty("line.separator") + MEAT + " " + JALAPENO + " " + TOMATO + " " + SAUCE);
+        System.out.println("5. " +  spiceBurger.getPrice() + " " + spiceBurger.getName() + System.getProperty("line.separator") + spiceBurger.getProductsAsString() );
 
         int opt;
         double price = 0.0;
@@ -32,24 +63,24 @@ public class MainTest {
             opt = sc.nextInt();
             switch (opt) {
                 case 1:
-                    orderedBurger = "klasyczny" + System.getProperty("line.separator") + Product.MEAT + " " + SALAT + " " + TOMATO + " " + SAUCE;
-                    price = 16.90;
+                    orderedBurger = classicBurger.getName() + System.getProperty("line.separator") + classicBurger.getProductsAsString();
+                    price = classicBurger.getPrice();
                     break;
                 case 2:
-                    orderedBurger = "kowbojski" + System.getProperty("line.separator") + MEAT + " " + ONION + " " + TOMATO + " " + SAUCE + " " + CUCUMBER;
-                    price = 21.90;
+                    orderedBurger = cowboyBurger.getPrice() + " " + cowboyBurger.getName() + System.getProperty("line.separator") + cowboyBurger.getProductsAsString();
+                    price = cowboyBurger.getPrice();
                     break;
                 case 3:
-                    orderedBurger = "orientalny" + System.getProperty("line.separator") + MEAT + " " + BAMBOO + " " + PINEAPPLE + " " + SAUCE;
-                    price = 20.90;
+                    orderedBurger = orientalBurger.getPrice() + " " + orientalBurger.getName() + System.getProperty("line.separator") + orientalBurger.getProductsAsString();
+                    price = orientalBurger.getPrice();
                     break;
                 case 4:
-                    orderedBurger = "serowy" + System.getProperty("line.separator") + MEAT + " " + SALAT + " " + TOMATO + " " + CHEESE;
-                    price = 19.90;
+                    orderedBurger = cheeseBurger.getPrice() + " " + cheeseBurger.getName() + System.getProperty("line.separator") + cheeseBurger.getProductsAsString();
+                    price = cheeseBurger.getPrice();
                     break;
                 case 5:
-                    orderedBurger = "ostry" + System.getProperty("line.separator") + MEAT + " " + JALAPENO + " " + TOMATO + " " + SAUCE;
-                    price = 18.90;
+                    orderedBurger = spiceBurger.getPrice() + " " + spiceBurger.getName() + System.getProperty("line.separator") + spiceBurger.getProductsAsString();
+                    price = spiceBurger.getPrice();
                     break;
                 default:
                     System.out.println("Wybrano niepoprawną opcje");
