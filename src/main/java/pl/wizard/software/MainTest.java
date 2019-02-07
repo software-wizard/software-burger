@@ -83,24 +83,19 @@ public class MainTest {
                 case 1:
                     break;
                 case 2:
-                    additionList.add(TOMATO.name());
-                    additionsPrice += 1.00;
+                    orderedBurger.addAdditional(TOMATO);
                     break;
                 case 3:
-                    additionList.add(RUCOLA.name());
-                    additionsPrice += 0.40;
+                    orderedBurger.addAdditional(RUCOLA);
                     break;
                 case 4:
-                    additionList.add(EGG.name());
-                    additionsPrice += 1.00;
+                    orderedBurger.addAdditional(EGG);
                     break;
                 case 5:
-                    additionList.add(CHEESE.name());
-                    additionsPrice += 0.80;
+                    orderedBurger.addAdditional(CHEESE);
                     break;
                 case 6:
-                    additionList.add(BECON.name());
-                    additionsPrice += 1.50;
+                    orderedBurger.addAdditional(BECON);
                     break;
                 default:
                     System.out.println("Wybrano niepoprawną opcje");
@@ -109,16 +104,8 @@ public class MainTest {
 
         } while (opt2 != 1);
 
-        if (additionList.isEmpty()) {
-            System.out.println("Zamówiłeś burger " + orderedBurger);
-        } else {
-            StringBuilder sb = new StringBuilder("Zamówiłeś burger " + orderedBurger + System.getProperty("line.separator") + " wybrane dodatki to: ");
-            additionList.forEach(a -> {
-                sb.append(a);
-                sb.append(", ");
-            });
-            sb.append(" do zapłaty: " + (orderedBurger.getPrice() + additionsPrice));
-            System.out.println(sb.toString());
-        }
+        System.out.println("Zamówiłeś burger " + orderedBurger);
+        System.out.println("wybrane dodatki to: " + orderedBurger.getAdditionalsAsString());
+        System.out.println("do zapłaty: " + orderedBurger.getPrice());
     }
 }

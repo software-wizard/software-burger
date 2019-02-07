@@ -24,6 +24,10 @@ public enum Product {
         this.price = aPrice;
     }
 
+    public double getPrice(){
+        return price;
+    }
+
 
     @Override
     public String toString() {
