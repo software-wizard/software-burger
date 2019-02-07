@@ -6,7 +6,7 @@ import java.util.List;
 public class Burger {
 
     private final String name;
-    private final List<String> products;
+    private final List<Product> products;
     private final double price;
 
     public Burger(String name, double price) {
@@ -15,7 +15,7 @@ public class Burger {
         this.price = price;
     }
 
-    public void addProduct(String aProduct){
+    public void addProduct(Product aProduct){
         products.add(aProduct);
     }
 

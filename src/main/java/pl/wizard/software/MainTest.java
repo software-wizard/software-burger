@@ -83,23 +83,23 @@ public class MainTest {
                 case 1:
                     break;
                 case 2:
-                    additionList.add(TOMATO);
+                    additionList.add(TOMATO.name());
                     additionsPrice += 1.00;
                     break;
                 case 3:
-                    additionList.add(RUCOLA);
+                    additionList.add(RUCOLA.name());
                     additionsPrice += 0.40;
                     break;
                 case 4:
-                    additionList.add(EGG);
+                    additionList.add(EGG.name());
                     additionsPrice += 1.00;
                     break;
                 case 5:
-                    additionList.add(CHEESE);
+                    additionList.add(CHEESE.name());
                     additionsPrice += 0.80;
                     break;
                 case 6:
-                    additionList.add(BECON);
+                    additionList.add(BECON.name());
                     additionsPrice += 1.50;
                     break;
                 default:
