@@ -9,6 +9,7 @@ public class MainTest {
     public static void main(String[] aArg) {
         Scanner sc = new Scanner(System.in);
         final Menu menu = new Menu();
+        menu.showMenu();
 
         int opt;
         Burger orderedBurger = null;
