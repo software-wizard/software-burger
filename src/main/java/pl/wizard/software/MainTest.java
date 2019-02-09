@@ -8,54 +8,9 @@ public class MainTest {
 
     public static void main(String[] aArg) {
         Scanner sc = new Scanner(System.in);
-
-        Burger classicBurger = new Burger("Klasyczny", 16.90);
-        classicBurger.addProduct(MEAT);
-        classicBurger.addProduct(SALAT);
-        classicBurger.addProduct(TOMATO);
-        classicBurger.addProduct(SAUCE);
-
-        Burger cowboyBurger = new Burger("Kowbojski", 21.90);
-        cowboyBurger.addProduct(MEAT);
-        cowboyBurger.addProduct(ONION);
-        cowboyBurger.addProduct(TOMATO);
-        cowboyBurger.addProduct(SAUCE);
-        cowboyBurger.addProduct(CUCUMBER);
-
-        Burger orientalBurger = new Burger("Orientalny", 20.90);
-        orientalBurger.addProduct(MEAT);
-        orientalBurger.addProduct(BAMBOO);
-        orientalBurger.addProduct(PINEAPPLE);
-        orientalBurger.addProduct(SAUCE);
-
-        Burger cheeseBurger = new Burger("Serowy", 19.90);
-        cheeseBurger.addProduct(MEAT);
-        cheeseBurger.addProduct(SALAT);
-        cheeseBurger.addProduct(TOMATO);
-        cheeseBurger.addProduct(CHEESE);
-
-        Burger spiceBurger = new Burger("ostry", 19.90);
-        spiceBurger.addProduct(MEAT);
-        spiceBurger.addProduct(JALAPENO);
-        spiceBurger.addProduct(TOMATO);
-        spiceBurger.addProduct(CHEESE);
-
-        List<Burger> menu = new ArrayList<>();
-        menu.add(classicBurger);
-        menu.add(cowboyBurger);
-        menu.add(orientalBurger);
-        menu.add(cheeseBurger);
-        menu.add(spiceBurger);
-
-        System.out.println("BURGER MENU");
-        System.out.println("WYBIERZ BURGERA:");
-        for (int i = 0; i < menu.size(); i++) {
-            System.out.println();
-            System.out.println(i + 1 + ". " + menu.get(i).getPrice() + " " + menu.get(i));
-        }
+        final Menu menu = new Menu();
 
         int opt;
-
         Burger orderedBurger = null;
         while (orderedBurger == null) {
             opt = sc.nextInt();
@@ -66,9 +21,7 @@ public class MainTest {
             }
         }
 
-        List<String> additionList = new ArrayList<>();
         int opt2;
-        double additionsPrice = 0.0;
         do {
             System.out.println("Czy życzysz sobie coś do niego dołożyć? Jakiś bekon, pomidor czy serek?");
             System.out.println("1. Nie jest spoko, zamawiam");
