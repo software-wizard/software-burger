@@ -8,11 +8,27 @@ public class MainTest {
 
     public static void main(String[] aArg) {
         Scanner sc = new Scanner(System.in);
-        final Menu menu = new Menu();
-        menu.showMenu();
 
+        System.out.println("Wybierz rodzaj bułki:");
+        System.out.println("1. Pszenna");
+        System.out.println("2. Miodowa");
+
+        Menu menu = null;
+        int roolTypeFromUser = sc.nextInt();
+        switch (roolTypeFromUser){
+            case 1:
+                menu = new Menu(Menu.WHEAT);
+                break;
+            case 2:
+                menu = new Menu(Menu.WHEAT);
+                break;
+            default:
+                throw new IllegalArgumentException("Wybrano niepoprawną opcje");
+        }
+
+        menu.showMenu();
         int opt;
-        Burger orderedBurger = null;
+        AbstractBurger orderedBurger = null;
         while (orderedBurger == null) {
             opt = sc.nextInt();
             if (opt < 1 || opt > 5) {

@@ -1,8 +1,8 @@
 package pl.wizard.software;
 
-public class Burger extends AbstractBurger {
+public class WheatBurger extends AbstractBurger {
 
-    public Burger(String name, double price) {
+    public WheatBurger(String name, double price) {
         super(name, price);
     }
 

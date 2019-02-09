@@ -2,19 +2,27 @@ package pl.wizard.software;
 
 import java.util.ArrayList;
 
-public class Menu extends ArrayList<Burger>{
+public class Menu extends ArrayList<AbstractBurger> {
 
-    public Menu(){
-        BurgerFactory factory = new BurgerFactory();
+    public final static String WHEAT = "Wheat";
+    public final static String SWEET_HONEY = "Sweet Honey";
 
-        add(factory.prepareBurger(BurgerFactory.CLASSIC));
-        add(factory.prepareBurger(BurgerFactory.COWBOY));
-        add(factory.prepareBurger(BurgerFactory.ORIENTAL));
-        add(factory.prepareBurger(BurgerFactory.SPICE));
-        add(factory.prepareBurger(BurgerFactory.CHEESY));
+    public Menu(String aMenuType) {
+        AbstractBurgerFactory factory = null;
+        if (aMenuType.equals(WHEAT)) {
+            factory = new WheatBurgerFactory();
+        } else if (aMenuType.equals(SWEET_HONEY)) {
+            factory = new SweetHoneyBurgerFactory();
+        }
+
+        add(factory.prepareBurger(AbstractBurgerFactory.CLASSIC));
+        add(factory.prepareBurger(AbstractBurgerFactory.COWBOY));
+        add(factory.prepareBurger(AbstractBurgerFactory.ORIENTAL));
+        add(factory.prepareBurger(AbstractBurgerFactory.SPICE));
+        add(factory.prepareBurger(AbstractBurgerFactory.CHEESY));
     }
 
-    public void showMenu(){
+    public void showMenu() {
         System.out.println("BURGER MENU");
         System.out.println("WYBIERZ BURGERA:");
         for (int i = 0; i < size(); i++) {
