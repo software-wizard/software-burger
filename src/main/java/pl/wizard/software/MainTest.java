@@ -13,20 +13,20 @@ public class MainTest {
         System.out.println("1. Pszenna");
         System.out.println("2. Miodowa");
 
-        Menu menu = null;
+        AbstractMenu burgerMenu = null;
         int roolTypeFromUser = sc.nextInt();
         switch (roolTypeFromUser){
             case 1:
-                menu = new Menu(Menu.WHEAT);
+                burgerMenu = new BurgerMenu(BurgerMenu.WHEAT);
                 break;
             case 2:
-                menu = new Menu(Menu.WHEAT);
+                burgerMenu = new BurgerMenu(BurgerMenu.WHEAT);
                 break;
             default:
                 throw new IllegalArgumentException("Wybrano niepoprawną opcje");
         }
 
-        menu.showMenu();
+        burgerMenu.showMenu();
         int opt;
         AbstractBurger orderedBurger = null;
         while (orderedBurger == null) {
@@ -34,7 +34,7 @@ public class MainTest {
             if (opt < 1 || opt > 5) {
                 System.out.println("Wybrano niepoprawną opcje");
             } else {
-                orderedBurger = menu.get(opt - 1);
+                orderedBurger = burgerMenu.get(opt - 1);
             }
         }
 
