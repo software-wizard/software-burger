@@ -6,14 +6,32 @@ import static pl.wizard.software.Product.*;
 
 public class MainTest {
 
-    public static void main(String[] aArg) {
-        Scanner sc = new Scanner(System.in);
+    private final static Scanner sc = new Scanner(System.in);
 
+    public static void main(String[] aArg) {
+        System.out.println("Co chcesz kupić:");
+        System.out.println("1. Burgera");
+        System.out.println("2. Napój");
+
+        int opt3 = sc.nextInt();
+        if(opt3 == 1){
+            orderaBurger();
+        }else if (opt3 == 2){
+            orderADrink();
+        }
+
+        
+    }
+
+    private static void orderADrink() {
+    }
+
+    private static void orderaBurger() {
         System.out.println("Wybierz rodzaj bułki:");
         System.out.println("1. Pszenna");
         System.out.println("2. Miodowa");
 
-        AbstractMenu burgerMenu = null;
+        BurgerMenu burgerMenu = null;
         int roolTypeFromUser = sc.nextInt();
         switch (roolTypeFromUser){
             case 1:
