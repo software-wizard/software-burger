@@ -1,6 +1,6 @@
 package pl.wizard.software;
 
-public class Drink{
+public class Drink implements Meal{
 
     private final String name;
     private final double price;

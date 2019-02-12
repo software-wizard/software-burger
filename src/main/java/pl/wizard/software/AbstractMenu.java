@@ -2,7 +2,7 @@ package pl.wizard.software;
 
 import java.util.ArrayList;
 
-public abstract class AbstractMenu extends ArrayList<AbstractBurger> {
+public abstract class AbstractMenu <T extends Meal> extends ArrayList<T> {
 
 
     public void showMenu() {

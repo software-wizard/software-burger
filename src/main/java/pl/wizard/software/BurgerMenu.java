@@ -1,8 +1,6 @@
 package pl.wizard.software;
 
-import java.util.ArrayList;
-
-public class BurgerMenu extends AbstractMenu {
+public class BurgerMenu extends AbstractMenu<AbstractBurger> {
 
     public final static String WHEAT = "Wheat";
     public final static String SWEET_HONEY = "Sweet Honey";

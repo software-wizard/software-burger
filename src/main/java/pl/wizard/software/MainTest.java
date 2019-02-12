@@ -24,6 +24,21 @@ public class MainTest {
     }
 
     private static void orderADrink() {
+        DrinkMenu drinkMenu = new DrinkMenu();
+        drinkMenu.showMenu();
+        int opt;
+        Drink orderedDrink = null;
+        while (orderedDrink == null) {
+            opt = sc.nextInt();
+            if (opt < 1 || opt > 4) {
+                System.out.println("Wybrano niepoprawną opcje");
+            } else {
+                orderedDrink = drinkMenu.get(opt - 1);
+            }
+        }
+
+        System.out.println("Zamówiłeś napój " + orderedDrink);
+        System.out.println("do zapłaty: " + orderedDrink.getPrice());
     }
 
     private static void orderaBurger() {

@@ -3,7 +3,7 @@ package pl.wizard.software;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractBurger {
+public abstract class AbstractBurger implements Meal{
     private final String name;
     private final List<Product> products;
     private final double price;
@@ -36,6 +36,7 @@ public abstract class AbstractBurger {
         return prepareStringFromArray(additionalProducts);
     }
 
+    @Override
     public double getPrice() {
         return price + additionalProducts.stream().mapToDouble(Product::getPrice).sum();
     }
