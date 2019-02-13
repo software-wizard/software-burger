@@ -1,5 +1,7 @@
 package pl.wizard.software;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +40,12 @@ public abstract class AbstractBurger implements Meal{
 
     @Override
     public double getPrice() {
-        return price + additionalProducts.stream().mapToDouble(Product::getPrice).sum();
+        double finalPrice = price;
+        if(LocalDate.now().getDayOfWeek().equals(DayOfWeek.WEDNESDAY)){
+            finalPrice = 0.9 * finalPrice;
+        }
+
+        return finalPrice + additionalProducts.stream().mapToDouble(Product::getPrice).sum();
     }
 
     private String prepareStringFromArray(List<Product> additionalProducts) {
