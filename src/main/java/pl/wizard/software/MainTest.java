@@ -53,7 +53,7 @@ public class MainTest {
                 burgerMenu = new BurgerMenu(BurgerMenu.WHEAT);
                 break;
             case 2:
-                burgerMenu = new BurgerMenu(BurgerMenu.WHEAT);
+                burgerMenu = new BurgerMenu(BurgerMenu.SWEET_HONEY);
                 break;
             default:
                 throw new IllegalArgumentException("Wybrano niepoprawną opcje");

@@ -52,7 +52,7 @@ public abstract class AbstractBurgerFactory {
                 spiceBurger.addProduct(JALAPENO);
                 spiceBurger.addProduct(TOMATO);
                 spiceBurger.addProduct(CHEESE);
-//                spiceBurger = new BurgerSpecialDayOfferDecorator(spiceBurger, DayOfWeek.FRIDAY);
+                spiceBurger = new BurgerSpecialDayOfferDecorator(spiceBurger, DayOfWeek.FRIDAY);
                 return spiceBurger;
         }
         throw new IllegalArgumentException("I don't know this burger");
