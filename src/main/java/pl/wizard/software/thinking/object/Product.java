@@ -1,4 +1,4 @@
-package pl.wizard.software;
+package pl.wizard.software.thinking.object;
 
 public enum Product {
 
