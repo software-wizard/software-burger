@@ -2,15 +2,15 @@ package pl.wizard.software.thinking.object;
 
 import java.util.Scanner;
 
-class BurgerChooser {
+class ItemChooser {
 
-    BurgerChooser() {
+    ItemChooser() {
     }
 
-    TrueBurger choose(Menu aMenu) {
+    Item choose(Menu aMenu) {
         Scanner sc = new Scanner(System.in);
         int opt;
-        TrueBurger orderedBurger = null;
+        Item orderedBurger = null;
         while (orderedBurger == null) {
             opt = sc.nextInt();
             if (opt < 1 || opt > 5) {

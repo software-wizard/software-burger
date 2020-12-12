@@ -2,11 +2,10 @@ package pl.wizard.software.thinking.object;
 
 import java.util.ArrayList;
 
-public class Menu extends ArrayList<TrueBurger>{
+public class Menu extends ArrayList<Item>{
 
-    public Menu(){
-        BurgerFactory factory = new BurgerFactory();
-        addAll(factory.createAllBurgers());
+    public Menu(AbstractItemFactory aFactory){
+        addAll(aFactory.createAllItems());
     }
 
     void show() {

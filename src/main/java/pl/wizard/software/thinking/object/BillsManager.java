@@ -2,7 +2,7 @@ package pl.wizard.software.thinking.object;
 
 
 public class BillsManager {
-    void showBill(TrueBurger aOrderedBurger) {
-        System.out.println("Zamówiłeś burger " + aOrderedBurger + System.lineSeparator() + "do zapłaty: " + aOrderedBurger.getPrice());
+    void showBill(Item aItem) {
+        System.out.println("Zamówiłeś " + aItem + System.lineSeparator() + "do zapłaty: " + aItem.getPrice());
     }
 }

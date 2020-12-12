@@ -1,12 +1,11 @@
 package pl.wizard.software.thinking.object;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import static pl.wizard.software.thinking.object.Product.*;
 
-public class BurgerFactory {
+public class BurgerFactory extends AbstractItemFactory {
 
     public final static String CLASSIC = "klasyczny";
     public final static String COWBOY = "kowbojski;";
@@ -56,8 +55,8 @@ public class BurgerFactory {
         throw new IllegalArgumentException("I don't know this burger");
     }
 
-    List<TrueBurger> createAllBurgers() {
-        ArrayList<TrueBurger> ret = new ArrayList<>();
+    List<Item> createAllItems() {
+        ArrayList<Item> ret = new ArrayList<>();
         ret.add(prepareBurger(BurgerFactory.CLASSIC));
         ret.add(prepareBurger(BurgerFactory.COWBOY));
         ret.add(prepareBurger(BurgerFactory.ORIENTAL));
